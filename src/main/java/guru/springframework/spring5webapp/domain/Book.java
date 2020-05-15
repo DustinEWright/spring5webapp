@@ -16,15 +16,15 @@ public class Book {
     @ManyToMany
     @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "author_id"))
-    private Set<Author> author;
+    private Set<Author> authors;
 
     public Book() {
     }
 
-    public Book(String title, String isbn, Set<Author> author) {
+    public Book(String title, String isbn, Set<Author> authors) {
         this.title = title;
         this.isbn = isbn;
-        this.author = author;
+        this.authors = authors;
     }
 
     public Long getId() {
@@ -51,12 +51,22 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public Set<Author> getAuthor() {
-        return author;
+    public Set<Author> getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(Set<Author> author) {
-        this.author = author;
+    public void setAuthor(Set<Author> authors) {
+        this.authors = authors;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", authors=" + authors +
+                '}';
     }
 
     @Override
