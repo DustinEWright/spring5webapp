@@ -66,7 +66,7 @@ public class Author {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", books=" + books +
+                // NOTE: AVOIDING MUTUAL RECURSION: ", books=" + books +
                 '}';
     }
 
