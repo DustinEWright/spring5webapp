@@ -3,6 +3,9 @@ package guru.springframework.spring5webapp.domain;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * Created by DW 05/16/20
+ */
 @Entity
 public class Book {
 
@@ -55,7 +58,7 @@ public class Book {
         return authors;
     }
 
-    public void setAuthor(Set<Author> authors) {
+    public void setAuthors(Set<Author> authors) {
         this.authors = authors;
     }
 

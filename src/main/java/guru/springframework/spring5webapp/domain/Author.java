@@ -3,6 +3,9 @@ package guru.springframework.spring5webapp.domain;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * Created by DW 05/16/20
+ */
 @Entity
 public class Author {
 
@@ -17,7 +20,6 @@ public class Author {
     private Set<Book> books;
 
     public Author() {
-
     }
 
     public Author(String firstName, String lastName, Set<Book> books) {
