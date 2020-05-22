@@ -1,6 +1,7 @@
 package guru.springframework.spring5webapp.bootstrap;
 
 import guru.springframework.spring5webapp.domain.Author;
+import guru.springframework.spring5webapp.domain.Book;
 import guru.springframework.spring5webapp.repositories.AuthorRepository;
 import guru.springframework.spring5webapp.repositories.BookRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -25,6 +26,7 @@ public class BootStrapData implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Author eric = new Author("Eric", "Evans");
+        Book bbb = new Book("Domain Driven Design", "123123");
 
     }
 }
