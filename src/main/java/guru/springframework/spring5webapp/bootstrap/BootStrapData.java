@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 /**
  * Created by DW 05/22/20
  */
-
 @Component
 public class BootStrapData implements CommandLineRunner {
 
@@ -34,12 +33,14 @@ public class BootStrapData implements CommandLineRunner {
         bookRepository.save(ddd);
 
         Author rod = new Author("Rod", "Johnson");
-        Book noEJB = new Book("J2EE Development Without EJB", "3965876219");
+        Book noEJB = new Book("J2EE Development without EJB", "3939459459");
         rod.getBooks().add(noEJB);
         noEJB.getAuthors().add(rod);
 
-        System.out.println("Started in Bootstrap");
-        System.out.println("Number of books: " + bookRepository.count());
+        authorRepository.save(rod);
+        bookRepository.save(noEJB);
 
+        System.out.println("Started in Bootstrap");
+        System.out.println("Number of Books: " + bookRepository.count());
     }
 }
