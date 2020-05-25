@@ -82,12 +82,13 @@ public class Publisher {
 
     @Override
     public String toString() {
-        return "Name{" + name +
-                ",id=" + id +
-                ", address line 1+" + address_line_1 + '\'' +
-                ", city+" + city + '\'' +
-                ", state+" + state + '\'' +
-                ", zip=" + zip +
+        return "Publisher{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address line 1+'" + address_line_1 + '\'' +
+                ", city+'" + city + '\'' +
+                ", state+'" + state + '\'' +
+                ", zip='" + zip +
                 '}';
     }
 
@@ -98,7 +99,7 @@ public class Publisher {
 
         Publisher publisher = (Publisher) o;
 
-        return id != null ? id.equals(publisher.zip) : publisher.id == null;
+        return id != null ? id.equals(publisher.id) : publisher.id == null;
     }
 
     @Override
