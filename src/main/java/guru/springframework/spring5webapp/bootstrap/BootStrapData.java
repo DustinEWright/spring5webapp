@@ -28,41 +28,42 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        System.out.println("Started in Bootstrap");
+
+        Publisher publisher = new Publisher();
+        publisher.setName("SFG Publishing");
+        publisher.setCity("St Petersburg");
+        publisher.setState("FL");
+
+        publisherRepository.save(publisher);
+
+        System.out.println("Publisher Count: " + publisherRepository.count());
+
         Author eric = new Author("Eric", "Evans");
         Book ddd = new Book("Domain Driven Design", "123123");
         eric.getBooks().add(ddd);
         ddd.getAuthors().add(eric);
 
+        ddd.setPublisher(publisher);
+        publisher.getBooks().add(ddd);
+
         authorRepository.save(eric);
         bookRepository.save(ddd);
+        publisherRepository.save(publisher);
 
         Author rod = new Author("Rod", "Johnson");
         Book noEJB = new Book("J2EE Development without EJB", "3939459459");
         rod.getBooks().add(noEJB);
         noEJB.getAuthors().add(rod);
 
+        noEJB.setPublisher(publisher);
+        publisher.getBooks().add(noEJB);
+
         authorRepository.save(rod);
         bookRepository.save(noEJB);
+        publisherRepository.save(publisher);
 
-        Publisher acme = new Publisher();
-        acme.setName("Acme");
-        acme.setAddress_line_1("123 Any street");
-        acme.setCity("Any Town");
-        acme.setState("MO");
-        acme.setZip("65026");
-
-        Publisher bobs = new Publisher();
-        bobs.setName("Bob's");
-        bobs.setAddress_line_1("95452 Luna");
-        bobs.setCity("Tranquility");
-
-        publisherRepository.save(acme);
-        publisherRepository.save(bobs);
-
-        System.out.println("Started in Bootstrap");
         System.out.println("Number of Books: " + bookRepository.count());
-        System.out.println("Number of Publishers: " + publisherRepository.count());
-
-
+        System.out.println("Publisher Number of Books: " + publisher.getBooks().size());
     }
 }
