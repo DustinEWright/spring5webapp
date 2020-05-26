@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * Created by DW 5/24/20
  */
-public abstract interface PublisherRepository extends CrudRepository<Publisher, Long> {
+public interface PublisherRepository extends CrudRepository<Publisher, Long> {
 }
