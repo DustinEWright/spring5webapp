@@ -91,7 +91,7 @@ public class Publisher {
                 ", address line 1+'" + address_line_1 + '\'' +
                 ", city+'" + city + '\'' +
                 ", state+'" + state + '\'' +
-                ", zip='" + zip +
+                ", zip='" + zip + '\'' +
                 '}';
     }
 
